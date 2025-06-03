@@ -1,0 +1,134 @@
+:root {
+  --folk-green: #3a1111; 
+  --folk-brown: rgb(53, 85, 49);   
+  --folk-gold: #ebb503;    
+  --folk-light: #336e50;   
+  --folk-dark: #1e2a1e;    
+}
+
+body {
+  font-family: 'Concert One', cursive;
+  background-color: var(--folk-light);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+
+.hero {
+  
+  height: 90vh;
+  background: url("img/Folk4Fun.JPG") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  overflow: hidden; 
+}
+.hero img {
+  height: 15vh; 
+  width: auto;
+  min-height: 80px; 
+  max-height: 150px; 
+  object-fit: contain; 
+}
+
+.folk4fun-logo {
+  height: 15vh;            
+  min-height: 80px;        
+  max-height: 150px;       
+  margin-left: 50px;             
+  object-fit: contain;     
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); 
+  
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.overlay {
+  background: rgba(53, 85, 49, 0.851) !important;
+  border: 2px solid var(--folk-gold) !important;
+}
+
+.navbar {
+  background-color: var(--folk-brown) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--folk-gold) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--folk-gold);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#historie, #galerie, #kontakt {
+  background-color: var(--folk-light);
+}
+
+#personalien, #termine {
+  background-color: var(--folk-dark) !important;
+}
+
+#aktuelles, #impressum {
+  background-color: var(--folk-brown) !important;
+}
+
+#personalien .rounded {
+  border: 3px solid var(--folk-gold) !important;
+  transition: transform 0.3s;
+}
+
+#personalien .rounded:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(46, 33, 33, 0.2);
+}
+
+#galerie img {
+  transition: all 0.4s;
+}
+
+#galerie img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+footer {
+  background-color: var(--folk-brown);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  #personalien .col-md-3 {
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
